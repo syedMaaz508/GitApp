@@ -44,7 +44,7 @@ export default function TextArea(props) {
         <>
         <div  style={{color: props.mode==='dark'?'white':'black'}}>
 
-            <h1 className='my-3' >TextUtils - Word Counter, Character Counter, Uppercase to Lowercase, Lowercase to Uppercase </h1>
+            <h1 className='my-3' >TextCookie - Word Counter, Character Counter, Uppercase to Lowercase, Lowercase to Uppercase </h1>
             <div className="mb-3 ">
                 {/* we want to change the bgcolor and color of text so we use props.mode for bgcolor and color inside an object */}
               <textarea className="form-control " style={{backgroundColor: props.mode==='dark'?'#24252A':'white', color:props.mode==='dark'?'white':'black'}} onChange={OnChangeFunc} value={text} id="myTextArea" rows="10"></textarea>
