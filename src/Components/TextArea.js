@@ -14,12 +14,20 @@ export default function TextArea(props) {
     }
 
     let Lowercase=()=>{
+
         let lower=text.toLowerCase();
         setText(lower)
         props.ShowAlert("Converted to LowerCase","success")
         
     }
-
+    
+    let WhiteSpaces=()=>{
+        
+        let str=text.split(/\s+/).join(" ")
+        setText(str)
+        props.ShowAlert("White Spaces Removed","success")
+        
+    }
 
     let CopyText=()=>{
 
@@ -54,6 +62,7 @@ export default function TextArea(props) {
             <button disabled={text.length===0} className="btn-l btn-info mx-1 my-2 rounded" onClick={Lowercase}>Lowercase</button>
             <button disabled={text.length===0} className="btn-l btn-info mx-1 my-2 rounded" onClick={ClearText}>Clear Text</button>
             <button disabled={text.length===0} className="btn-l btn-info mx-1 my-2 rounded" onClick={CopyText}>Copy Text</button>
+            <button disabled={text.length===0} className="btn-l btn-info mx-1 my-2 rounded" onClick={WhiteSpaces}>White Spaces</button>
          
 
         </div>
