@@ -12,7 +12,7 @@ export default function Navbar(props) {
 
      
         // <nav className={`navbar navbar-expand-lg navbar- ${props.mode} bg-${props.mode}`}>
-        <nav className={`navbar navbar-expand-lg navbar- ${props.mode} bg-${props.mode==='light'?'info':'dark'}`} style={{borderBottom:props.mode==='dark'?'.5px solid white':'none',borderTop:props.mode==='dark'?'.5px solid white':'none'}}>
+        <nav className={`navbar navbar-expand-lg navbar- ${props.mode} bg-${props.mode==='light'?'light':'dark'}`} style={{borderBottom:props.mode==='dark'?'.5px solid white':'none',borderTop:props.mode==='dark'?'.5px solid white':'none'}}>
         <div className="container-fluid">
           <Link data-bs-toggle="tooltip" data-bs-placement="top" title="By Syed Maaz" className={`navbar-brand text-${props.mode==='dark'?'light':'dark'}`} to="/" style={{fontSize:'25px',fontWeight:'bold',fontFamily:'sans-serif'}} >
             {props.title}
@@ -25,7 +25,9 @@ export default function Navbar(props) {
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            
           >
+             
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
