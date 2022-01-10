@@ -9,6 +9,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import Footer from "./Components/Footer";
 
 
 function App() {
@@ -73,12 +74,15 @@ function App() {
           </Route>
           {/* it is necessary to write exact before path */}
           <Route exact path="/">
-          <TextArea mode={mode} ShowAlert={AlertText}/>
+            <TextArea mode={mode} ShowAlert={AlertText}/>
           </Route>
+         
     </Switch>
 
-    </div>
 
+    </div>
+    
+    <Footer/>
     </Router>
     
     </>   

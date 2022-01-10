@@ -55,14 +55,14 @@ export default function TextArea(props) {
             <h1 className='my-3' >TextCookie - Word Counter, Character Counter, Uppercase to Lowercase, Lowercase to Uppercase </h1>
             <div className="mb-3 ">
                 {/* we want to change the bgcolor and color of text so we use props.mode for bgcolor and color inside an object */}
-              <textarea className="form-control " style={{backgroundColor: props.mode==='dark'?'#24252A':'white', color:props.mode==='dark'?'white':'black'}} onChange={OnChangeFunc} value={text} id="myTextArea" rows="10"></textarea>
+              <textarea className="shadow p-3 mb-5 rounded form-control " style={{backgroundColor: props.mode==='dark'?'#212529':'white', color:props.mode==='dark'?'white':'black'}} onChange={OnChangeFunc} value={text} id="myTextArea" rows="10"></textarea>
             </div>
 
-            <button disabled={text.length===0} className="btn-u btn-info mx-1 my-2 rounded" onClick={Uppercase}>Uppercase</button>
-            <button disabled={text.length===0} className="btn-l btn-info mx-1 my-2 rounded" onClick={Lowercase}>Lowercase</button>
-            <button disabled={text.length===0} className="btn-l btn-info mx-1 my-2 rounded" onClick={ClearText}>Clear Text</button>
-            <button disabled={text.length===0} className="btn-l btn-info mx-1 my-2 rounded" onClick={CopyText}>Copy Text</button>
-            <button disabled={text.length===0} className="btn-l btn-info mx-1 my-2 rounded" onClick={WhiteSpaces}>White Spaces</button>
+            <button disabled={text.length===0} className={`btn-u btn-${props.mode==='dark'?'dark':'info'} mx-1 my-2`} onClick={Uppercase}>Uppercase</button>
+            <button disabled={text.length===0} className={`btn-u btn-${props.mode==='dark'?'dark':'info'} mx-1 my-2`} onClick={Lowercase}>Lowercase</button>
+            <button disabled={text.length===0} className={`btn-u btn-${props.mode==='dark'?'dark':'info'} mx-1 my-2`} onClick={ClearText}>Clear Text</button>
+            <button disabled={text.length===0} className={`btn-u btn-${props.mode==='dark'?'dark':'info'} mx-1 my-2`} onClick={CopyText}>Copy Text</button>
+            <button disabled={text.length===0} className={`btn-u btn-${props.mode==='dark'?'dark':'info'} mx-1 my-2`} onClick={WhiteSpaces}>White Spaces</button>
          
 
         </div>
@@ -71,7 +71,11 @@ export default function TextArea(props) {
             {/* /\s+/ regular expression which splits spaces including new line and one or more */}
             <p className="ts">{text.split(/\s+/).filter((element)=>{return element.length !==0}).length} Words , {text.length} Characters</p>  
             <h2>Preview</h2>
+            
+            <div className="text-break">
             <p>{text===''?'Nothing to Preview':text}</p>
+            </div>
+
 
         </div>
         </>
